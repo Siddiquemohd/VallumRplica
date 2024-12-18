@@ -1,0 +1,193 @@
+.investment-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: url('/images/invest1.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+.investment-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Timeline Styles */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.timeline-item {
+  text-align: center;
+  margin: 30px 60px;
+  position: relative;
+}
+
+.year {
+  background-color: white;
+  color:  #4c0b7c;
+  padding: 8px 25px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 2px 3px 3px 2px rgba(213, 212, 212, 0.914);
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 8px auto;
+  z-index: 5;
+  position: relative; /* Add this to position the circle around the dot */
+}
+
+/* Circle around the dot when active */
+.dot.active::after {
+  content: "";
+  position: absolute;
+  top: -1px; /* Adjust to position the circle around the dot */
+  left: -2px; /* Adjust to position the circle around the dot */
+  width: 23px;  /* Circle size */
+  height: 23px;
+  background-color: transparent;
+  border: 4px solid white;  /* Thinner border (change from 3px to 2px) */
+  border-radius: 50%; /* Make it a circle */
+  z-index: 4; /* Make sure it's behind the dot */
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 1;
+}
+
+.dot.active {
+  background-color: #6c63ff;
+}
+
+.cir.active {
+  border-radius: 8px;
+  background-color: white;
+  border-color: white;
+}
+
+.line {
+  position: absolute;
+  margin-left: 230px;
+  margin-right: 230px;
+  top: 85px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: white;
+  z-index: 0;
+}
+
+.timeline-item.active .year {
+  background-color:  #4c0b7c!important;
+  color: #fff;
+}
+
+.timeline-item.active .dot {
+  background-color:  #4c0b7c;
+}
+
+/* Content Section */
+.content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.content button {
+  background-color: #4c0b7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.content button:hover {
+  background-color: white;
+  color: #4c0b7c;
+}
+
+/* Navigation */
+.navigation {
+  margin-top: 20px;
+}
+
+.nav-arrow {
+  background-color: #4c0b7c;
+  color: white;
+  border: none;
+  padding: 6px 13px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.nav-arrow:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background-color: #4c0b7c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline {
+    flex-wrap: wrap;
+  }
+
+  .timeline-item {
+    margin: 10px;
+  }
+
+  .content {
+    width: 90%;
+  }
+}
